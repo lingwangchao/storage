@@ -41,8 +41,8 @@ class git_update extends Command
         $target = '/www/wwwroot/storage/app/Http/Controllers/Home/';
         $file = $this->myScanDir($url);
         $files = $url . '/' . $file;
-        // copy($files,($target . $file));
-        // unlink($files);
+        copy($files,($target . $file));
+        unlink($files);
         exec('git add .');
         exec('git commit -m "server"');
         exec('git push');
