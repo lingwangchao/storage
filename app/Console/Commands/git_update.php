@@ -43,6 +43,7 @@ class git_update extends Command
         $files = $url . '/' . $file;
         copy($files,($target . $file));
         unlink($files);
+        exec('cd /www/wwwroot/storage');
         exec('git add .');
         exec('git commit -m "server"');
         exec('git push');
