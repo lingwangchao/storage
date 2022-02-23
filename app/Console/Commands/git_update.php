@@ -46,6 +46,7 @@ class git_update extends Command
         exec('git add .');
         exec('git commit -m "server"');
         exec('git push');
+        echo '执行成功';
         return 0;
     }
 
